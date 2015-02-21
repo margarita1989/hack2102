@@ -38,7 +38,11 @@
 
                     stream.on('close', function () {
                         User.findOne({'google.token': req.cookies['token']}, function(err, user) {
-                            user.books.push('/books/' + filename);
+                            user.books.push(
+                                '/books/' + filename.split('.')[0] +
+                                '?t=' + (new Date).getTime() + '.' +
+                                filename.split('.')[1]
+                            );
                             user.save(function(err) {
                                 res.json({
                                     success: true,
