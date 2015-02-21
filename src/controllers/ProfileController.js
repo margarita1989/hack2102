@@ -12,7 +12,7 @@
                 res.render('profile', {
                     isLoggedIn: (user_profile) ? true : false,
                     user: user || {},
-                    user_profile: user_profile.google
+                    user_profile: user_profile
                 });
             });
         }
