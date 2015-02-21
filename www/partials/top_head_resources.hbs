@@ -6,11 +6,16 @@
             isLoggedIn: "{{ isLoggedIn }}",
             user: {
                 name: "{{ user.google.name }}",
-                books: "{{ user.books }}"
+                books: [
+                    {{# each user.books }}
+                        {
+                            "name": "{{ this.name }}",
+                            "url": "{{ this.url }}"
+                        },
+                    {{/ each }}
+                ]
             }
         };
-
-        bookFace.user.books = bookFace.user.books.split(',')
     })(window);
 </script>
 

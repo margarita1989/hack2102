@@ -3,13 +3,10 @@ define([
     'angular-route',
     'angular-translate',
     'angular-upload',
-    'angular-pdf',
+    'angular-pdfViewer',
 
     'upload/upload-controller',
-    'file-viewer/file-viewer-controller',
-
-    'pdf',
-    'pdf.worker'
+    'file-viewer/file-viewer-controller'
 ], function(
     angular,
     angularRoute,
@@ -26,8 +23,10 @@ define([
         'ngRoute',
         'lr.upload',
         'pascalprecht.translate',
-        'pdf'
+        'ngPDFViewer'
     ]);
+
+    PDFJS.workerSrc = 'lib/pdf.worker.js';
 
     bookFace
         .controller('UploadController', uploadCtrl)

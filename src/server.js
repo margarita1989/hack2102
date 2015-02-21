@@ -32,7 +32,7 @@
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true}))
         .use(express.static(__dirname + '/../www/ROOT'))
-        .use(express.static(__dirname + '/../www/files'))
+        .use(express.static(__dirname + '/../www/files/'))
         .use(session({
             secret: '123',
             resave: true,

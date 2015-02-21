@@ -1,1 +1,8 @@
-<canvas id="pdf-canvas"></canvas
+<div ng-controller="fileViewerController">
+    <button ng-click="prevPage()">&lt;</button>
+    <button ng-click="nextPage()">&gt;</button>
+    <br>
+    <span>${currentPage}/${totalPages}</span>
+    <br>
+    <pdfviewer src="${pdfUrl}" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
+</div>

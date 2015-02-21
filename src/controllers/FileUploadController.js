@@ -26,11 +26,13 @@
             req.pipe(req.busboy);
 
             req.busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+                var time_stamp = (new Date).getTime();
+
                 if(options['allowedTypes'].indexOf(mimetype) !== -1) {
                     stream = fs.createWriteStream(
                         properties.env[process.env.ENV_NAME]['uploadDir'] +
-                        '/books/' + filename.split('.')[0] +
-                        '_t=' + (new Date).getTime() + '.' +
+                        '/books/' + filename.split(' ').join('_').split('.')[0] +
+                        '_t=' + time_stamp + '.' +
                         filename.split('.')[1]
                     );
 
@@ -40,8 +42,8 @@
                         User.findOne({'google.token': req.cookies['token']}, function(err, user) {
                             user.books.push({
                                 name: filename.split('.')[0],
-                                url: '/books/' + filename.split('.')[0] +
-                                    '_t=' + (new Date).getTime() + '.' +
+                                url: '/books/' + filename.split(' ').join('_').split('.')[0] +
+                                    '_t=' + time_stamp + '.' +
                                     filename.split('.')[1]
                             });
                             user.save(function(err) {
