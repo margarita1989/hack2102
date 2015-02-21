@@ -16,9 +16,15 @@
                     if(err) {
                         return done(err);
                     } else if(user) {
-                        return done(user);
+                        return done(null, user);
                     } else {
-                        newUser = new User(profile._json);
+                        newUser = new User();
+                        newUser.google.id = profile._json.id;
+                        newUser.google.image = profile._json.image;
+                        newUser.google.name = profile._json.name;
+                        newUser.google.email = profile._json.email;
+                        newUser.google.token = token;
+
                         newUser.save(function(err) {
                             if(err) {
                                 throw err;
