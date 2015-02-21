@@ -28,7 +28,9 @@
         </ul>
     </div>
 </div>
-
-<a href="/auth/google">Sign In with Google</a>
-
+{{# if isLoggedIn}}
+    {{ user.google.name }}
+{{ else }}
+    <a href="/auth/google">Sign In with Google</a>
+{{/ if }}
 {{> bottom }}
