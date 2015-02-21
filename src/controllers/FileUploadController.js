@@ -30,7 +30,7 @@
                     stream = fs.createWriteStream(
                         properties.env[process.env.ENV_NAME]['uploadDir'] +
                         '/books/' + filename.split('.')[0] +
-                        '?t=' + (new Date).getTime() + '.' +
+                        '_t=' + (new Date).getTime() + '.' +
                         filename.split('.')[1]
                     );
 
@@ -40,7 +40,7 @@
                         User.findOne({'google.token': req.cookies['token']}, function(err, user) {
                             user.books.push(
                                 '/books/' + filename.split('.')[0] +
-                                '?t=' + (new Date).getTime() + '.' +
+                                '_t=' + (new Date).getTime() + '.' +
                                 filename.split('.')[1]
                             );
                             user.save(function(err) {
