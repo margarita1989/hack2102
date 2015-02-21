@@ -19,6 +19,7 @@
                         return done(null, user);
                     } else {
                         newUser = new User();
+
                         newUser.google.id = profile._json.id;
                         newUser.google.image = profile._json.picture;
                         newUser.google.name = profile._json.name;

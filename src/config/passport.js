@@ -5,32 +5,34 @@
         passport,
         GoogleStrategy,
 
+        properties,
         AuthCtrl,
         User;
 
     mongoose = require('mongoose');
     passport = require('passport');
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+    properties = require('server.properties');
     User = require('models/User');
-
-    mongoose.connect('mongodb://localhost:27017/bookface');
-
     AuthCtrl = require('controllers/AuthController');
+
+    mongoose.connect(properties['env'][process.env.ENV_NAME]['dbUrl']);
 
     passport.use('google', new GoogleStrategy(
         {
-            clientID: '310542448244-l6brplovbn5vhabhuik3f6pvvm7mqck9.apps.googleusercontent.com',
-            clientSecret: 'RZB3oIa3k-9WPLawfSfDq4Vh',
-            callbackURL: 'http://localhost:3000/auth/google/return'
+            clientID: properties['social']['google']['clientID'],
+            clientSecret: properties['social']['google']['clientSecret'],
+            callbackURL: properties['env'][process.env.ENV_NAME]['baseUrl'] + '/auth/google/return'
         }, AuthCtrl.Google
     ));
 
     passport.serializeUser(function(user, done) {
-        done(null, user.google.id);
+        done(null, user.id);
     });
 
     passport.deserializeUser(function(id, done) {
-        User.findOne({'google.id': id}, function(err, user) {
+        User.findById(id, function(err, user) {
             done(err, user);
         });
     });

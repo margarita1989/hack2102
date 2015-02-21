@@ -6,8 +6,11 @@
 
     LoginCtrl = function(req, res, next) {
         if(req.user) {
-            User.findOne({'google.id': req.user.google.id}, function(err, user) {
-                res.cookie('google_token', user.google.token, {
+            User.findById(req.user.id, function(err, user) {
+                res.cookie('logged_by', 'google', {httpOnly: true});
+                res.cookie('access_token', user.google.token, {httpOnly: true});
+
+                res.cookie('token', user.google.token, {
                     httpOnly: true
                 });
                 res.redirect('home');

@@ -1,10 +1,20 @@
 {
   "env": {
     "development": {
-      "port": 3000
+      "port": 3000,
+      "baseUrl": "http://localhost:3000",
+      "dbUrl": "mongodb://localhost:27017/bookface"
     },
     "production": {
-      "port": 8080
+      "port": 8080,
+      "baseUrl": "http://localhost:3000",
+      "dbUrl": "mongodb://localhost:27017/bookface"
+    }
+  },
+  "social": {
+    "google": {
+      "clientID": "310542448244-l6brplovbn5vhabhuik3f6pvvm7mqck9.apps.googleusercontent.com",
+      "clientSecret": "RZB3oIa3k-9WPLawfSfDq4Vh"
     }
   }
 }

@@ -5,15 +5,11 @@
         User = require('models/User');
 
     HomePageCtrl = function(req, res, next) {
-        var active_user;
-
-        if(req.cookies['google_token']) {
-            User.findOne({'google.token': req.cookies['google_token']}, function(err, user) {
-                active_user = user;
-
+        if(req.cookies['token']) {
+            User.findOne({'google.token': req.cookies['token']}, function(err, user) {
                 res.render('home', {
-                    isLoggedIn: req.isAuthenticated(),
-                    user: active_user,
+                    isLoggedIn: true,
+                    user: user,
                     UI: {
                         title: 'Bookface'
                     }
@@ -21,7 +17,7 @@
             });
         } else {
             res.render('home', {
-                isLoggedIn: req.isAuthenticated(),
+                isLoggedIn: false,
                 UI: {
                     title: 'Bookface'
                 }
