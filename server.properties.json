@@ -18,5 +18,14 @@
       "clientID": "310542448244-l6brplovbn5vhabhuik3f6pvvm7mqck9.apps.googleusercontent.com",
       "clientSecret": "RZB3oIa3k-9WPLawfSfDq4Vh"
     }
+  },
+  "uploader": {
+    "allowedTypes": [
+      "application/pdf",
+      "image/jpg",
+      "image/jpeg",
+      "image/png",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ]
   }
 }
