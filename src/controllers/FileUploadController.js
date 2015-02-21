@@ -4,12 +4,14 @@
     var fs,
         busboy,
 
+        properties,
         User,
         FileUploaderCtrl;
 
     fs = require('fs');
     busboy = require('connect-busboy');
 
+    properties = require('server.properties');
     User = require('models/User');
 
     FileUploaderCtrl = function(req, res) {
@@ -20,7 +22,7 @@
             req.pipe(req.busboy);
 
             req.busboy.on('file', function (fieldname, file, filename) {
-                stream = fs.createWriteStream('www/files/books/' + filename);
+                stream = fs.createWriteStream(properties.env[process.env.ENV_NAME]['uploadDir'] + '/books/' + filename);
                 file.pipe(stream);
 
                 stream.on('close', function () {
