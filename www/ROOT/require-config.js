@@ -5,6 +5,9 @@ require.config({
         'angular-route': '../lib/angular-route',
         'angular-translate': '../lib/angular-translate',
         'angular-upload': '../lib/angular-upload',
+        'angular-pdf': '../lib/angular-pdf',
+        'pdf': '../lib/pdf',
+        'pdf.worker': '../lib/pdf.worker',
 
         'bookface': '../bookface'
     },
@@ -14,7 +17,8 @@ require.config({
         },
         'angular-route': ['angular'],
         'angular-translate': ['angular'],
-        'angular-upload': ['angular']
+        'angular-upload': ['angular'],
+        'angular-pdf': ['angular']
     },
     deps: ['bookface']
 });
