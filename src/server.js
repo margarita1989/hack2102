@@ -19,6 +19,7 @@
         .set('views', __dirname + '/../www/views/')
         .set('view engine', 'hbs')
 
+        .use(express.static(__dirname + '/../www/ROOT'))
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true}))
         .use(cookieParser());
