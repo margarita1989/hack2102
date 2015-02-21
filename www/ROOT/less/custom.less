@@ -7,8 +7,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
   font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit;
   vertical-align:baseline; }
 
-
-/* не забудьте определить состояник "фокус", стилей */
+//* не забудьте определить состояник "фокус", стилей */
 :focus { outline:0; }
 body { line-height:1; color:black; background:white; }
 ol, ul { list-style:none; }
@@ -19,36 +18,57 @@ caption, th, td { text-align:left; font-weight:normal; }
 blockquote:before, blockquote:after, q:before, q:after { content:""; }
 blockquote, q { quotes:"" ""; }
 
+/*---------------COMMON--------------------------*/
+.hidden {
+  display: none;
+  height: 0;
+}
+
+/*------------------------------------------------*/
 
 header {
   min-height: 100px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
-  margin-bottom: 2px;
+  background: url("../images/fon.png") top center no-repeat;
+  width: 1025px;
+  margin: 0 auto;
 
-  .logo {
-    font-size: 24px;
-    color: blue;
-    padding: 5px;
-    float: left;
-  }
   .login {
     float: right;
     font-size: 12px;
+    background: #fff;
+    padding: 10px 15px;
+    color: rgb(189,52,48);
+    text-decoration: none;
+    margin: 30px 30px 0 0;
   }
 }
 .content {
-  border-top: 1px solid #000;
+  background: #CDB79E;
+  border-top: 1px solid #bd3430;
   width: 100%;
+  position: relative;
+  min-height: 150px;
 
   .menu_column {
-    width: 30%;
-    background: lightgray;
+    width: 200px;
+    position: absolute;
+  }
+  .left {
     float: left;
   }
-  .submenu_column {
-    width: 30%;
-    background: lightgray;
+  .right {
     float: right;
+  }
+  .content_column {
+    background: #FFE4C4;
+    border-radius: 10px;
+    height: 100px;
+    margin-top: 3px;
+    left: 200px;
+    right: 200px;
+    position: absolute;
+  }
+  .col3 {
+    right: 0;
   }
 }

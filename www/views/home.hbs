@@ -1,11 +1,15 @@
 {{> top }}
 
 <header>
-    <div class="logo">BOOKFACE</div>
-    <div class="login"><button>Login on social network</button></div>
+        {{# if isLoggedIn}}
+            {{ user.google.name }}
+            <img src="{{user.google.image}}" alt=""/>
+        {{ else }}
+            <a href="/auth/google" class="login">SignIn with Google</a>
+        {{/ if }}
 </header>
-<div class="content">
-    <div class="menu_column">
+<div class="content clearfix">
+    <div class="menu_column left">
         <ul>
             <li>Main</li>
             <li class="btn btn-primary btn-upload"
@@ -20,7 +24,7 @@
         <div class="plain text"></div>
         <div class="pagination"></div>
     </div>
-    <div class="submenu_column">
+    <div class="menu_column col3">
         <ul>
             <li>Rating</li>
             <li>Reviews</li>
@@ -28,10 +32,4 @@
         </ul>
     </div>
 </div>
-{{# if isLoggedIn}}
-    {{ user.google.name }}
-    <img src="{{user.google.image}}" alt=""/>
-{{ else }}
-    <a href="/auth/google">Sign In with Google</a>
-{{/ if }}
 {{> bottom }}
