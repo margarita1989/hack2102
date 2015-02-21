@@ -9,10 +9,11 @@
 
     UserSchema = mongoose.Schema({
         google: {
-            id           : String,
-            token        : String,
-            email        : String,
-            name         : String
+            id : String,
+            token : String,
+            email : String,
+            name : String,
+            image: String
         }
     });
 

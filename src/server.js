@@ -2,18 +2,20 @@
 
 (function() {
     var express,
-        expressSession,
+        session,
         bodyParser,
         cookieParser,
         handlebars,
+        passport,
 
         server;
 
-    expressSession = require('express-session');
+    session = require('express-session');
     express = require('express');
     bodyParser = require('body-parser');
     cookieParser = require('cookie-parser');
     handlebars = require('hbs');
+    passport = require('passport');
 
     server = express();
 
@@ -23,10 +25,17 @@
         .set('views', __dirname + '/../www/views/')
         .set('view engine', 'hbs')
 
-        .use(express.static(__dirname + '/../www/ROOT'))
+        .use(cookieParser())
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true}))
-        .use(cookieParser());
+        .use(express.static(__dirname + '/../www/ROOT'))
+        .use(session({
+            secret: '123',
+            resave: true,
+            saveUninitialized: true
+        }))
+        .use(passport.initialize())
+        .use(passport.session());
 
     module.exports = server;
 })();

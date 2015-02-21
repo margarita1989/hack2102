@@ -16,8 +16,6 @@
         router = require('router');
         properties = require('server.properties').env[process.env['ENV_NAME']];
 
-        server.use(passport.initialize());
-        server.use(passport.session());
         server.use(router);
 
         return {
