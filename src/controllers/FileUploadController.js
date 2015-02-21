@@ -38,11 +38,12 @@
 
                     stream.on('close', function () {
                         User.findOne({'google.token': req.cookies['token']}, function(err, user) {
-                            user.books.push(
-                                '/books/' + filename.split('.')[0] +
-                                '_t=' + (new Date).getTime() + '.' +
-                                filename.split('.')[1]
-                            );
+                            user.books.push({
+                                name: filename.split('.')[0],
+                                url: '/books/' + filename.split('.')[0] +
+                                    '_t=' + (new Date).getTime() + '.' +
+                                    filename.split('.')[1]
+                            });
                             user.save(function(err) {
                                 res.json({
                                     success: true,
