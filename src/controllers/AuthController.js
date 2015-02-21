@@ -27,11 +27,15 @@
                         newUser.google.token = token;
                         newUser.books = [];
 
-                        newUser.save(function(err) {
-                            if(err) {
-                                throw err;
-                            }
-                            return done(null, newUser);
+                        User.where({}).count(function(err, count) {
+                            newUser.customID = count + 1;
+
+                            newUser.save(function(err) {
+                                if(err) {
+                                    throw err;
+                                }
+                                return done(null, newUser);
+                            });
                         });
                     }
                 });

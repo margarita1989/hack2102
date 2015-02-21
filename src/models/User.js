@@ -7,14 +7,14 @@
 
     mongoose = require('mongoose');
 
-    UserSchema = mongoose.Schema({
+    UserSchema = new mongoose.Schema({
         google: {
-            id : String,
             token : String,
             email : String,
             name : String,
             image: String
         },
+        customID : Number,
         books: Array
     });
 

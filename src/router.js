@@ -7,6 +7,7 @@
         HomeCtrl,
         LoginCtrl,
         FileUploadCtrl,
+        ProfileCtrl,
         router;
 
     express = require('express');
@@ -15,6 +16,7 @@
     HomeCtrl = require('controllers/HomeController');
     LoginCtrl = require('controllers/LoginController');
     FileUploadCtrl = require('controllers/FileUploadController');
+    ProfileCtrl = require('controllers/ProfileController');
     router = express.Router();
 
     router
@@ -35,6 +37,10 @@
     router
         .route('/upload')
         .post(FileUploadCtrl);
+
+    router
+        .route('/profile/:userID')
+        .get(ProfileCtrl);
 
     router
         .route('/login')

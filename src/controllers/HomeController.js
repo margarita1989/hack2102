@@ -1,12 +1,10 @@
 'use strict';
 
 (function() {
-    var i18n,
+    var HomePageCtrl,
+        User;
 
-        HomePageCtrl,
-        User = require('models/User');
-
-    i18n = require('i18n');
+    User = require('models/User');
 
     HomePageCtrl = function(req, res, next) {
         if(req.cookies['token']) {
