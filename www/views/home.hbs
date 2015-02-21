@@ -28,6 +28,11 @@
         <div class="plain text"></div>
         <div class="pagination"></div>
     </div>
+
+    <div class="wrapper" ng-controller="fileViewerController">
+        <ng-pdf template-url="components/file-viewer/file-viewer-template.html"></ng-pdf>
+    </div>
+
     <div class="menu_column col3">
         <div ng-controller="UploadController">
             <p style="color: red">{{user}}</p>
