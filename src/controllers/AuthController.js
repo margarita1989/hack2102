@@ -20,7 +20,7 @@
                     } else {
                         newUser = new User();
                         newUser.google.id = profile._json.id;
-                        newUser.google.image = profile._json.image;
+                        newUser.google.image = profile._json.picture;
                         newUser.google.name = profile._json.name;
                         newUser.google.email = profile._json.email;
                         newUser.google.token = token;

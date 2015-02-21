@@ -30,6 +30,7 @@
 </div>
 {{# if isLoggedIn}}
     {{ user.google.name }}
+    <img src="{{user.google.image}}" alt=""/>
 {{ else }}
     <a href="/auth/google">Sign In with Google</a>
 {{/ if }}
