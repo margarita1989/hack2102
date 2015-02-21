@@ -7,7 +7,6 @@
     User = require('models/User');
 
     AuthCtrl = (function() {
-
         return {
             Google: function(token, refreshToken, profile, done) {
                 var newUser;

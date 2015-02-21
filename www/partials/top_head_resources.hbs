@@ -3,8 +3,14 @@
 <script>
     (function(global) {
         global.bookFace = {
-            isLoggedIn: "{{ isLoggedIn }}"
-        }
+            isLoggedIn: "{{ isLoggedIn }}",
+            user: {
+                name: "{{ user.google.name }}",
+                books: "{{ user.books }}"
+            }
+        };
+
+        bookFace.user.books = bookFace.user.books.split(',')
     })(window);
 </script>
 
