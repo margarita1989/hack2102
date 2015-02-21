@@ -2,12 +2,14 @@
 
 (function() {
     var express,
+        expressSession,
         bodyParser,
         cookieParser,
         handlebars,
 
         server;
 
+    expressSession = require('express-session');
     express = require('express');
     bodyParser = require('body-parser');
     cookieParser = require('cookie-parser');

@@ -8,10 +8,7 @@
             UI: {
                 title: 'Bookface'
             }
-        })
-        angular.module('app', [
-            'lr.upload'
-        ]);
+        });
     };
 
     module.exports = HomePageCtrl;
