@@ -22,7 +22,12 @@ define([
     ]);
 
     bookFace
-        .controller('UploadController', uploadCtrl);
+        .controller('UploadController', uploadCtrl)
+
+        .config(function($interpolateProvider) {
+            $interpolateProvider.startSymbol('${');
+            $interpolateProvider.endSymbol('}');
+        });
 
     angular.bootstrap(document, ['bookFace']);
 });

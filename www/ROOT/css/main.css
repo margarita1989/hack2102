@@ -8088,6 +8088,10 @@ header .login {
   text-decoration: none;
   margin: 30px 30px 0 0;
 }
+header .ava {
+  width: 30px;
+  height: 30px;
+}
 .content {
   background: #CDB79E;
   border-top: 1px solid #bd3430;

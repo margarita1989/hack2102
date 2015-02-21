@@ -2,12 +2,24 @@
 
 <header>
         {{# if isLoggedIn}}
-            {{ user.google.name }}
-            <img src="{{user.google.image}}" alt=""/>
+            <div class="login">
+                {{ user.google.name }}
+                <img class="ava" src="{{user.google.image}}" alt=""/>
+            </div>
         {{ else }}
             <a href="/auth/google" class="login">SignIn with Google</a>
         {{/ if }}
 </header>
+
+<div ng-controller="UploadController">
+    <p style="color: red">{{user}}</p>
+    <ul>
+        <li ng-repeat="item in user">
+            ${item.books}
+        </li>
+    </ul>
+</div>
+
 <div class="content clearfix">
     <div class="menu_column left">
         <ul>
