@@ -22,9 +22,7 @@
   "uploader": {
     "allowedTypes": [
       "application/pdf",
-      "image/jpg",
-      "image/jpeg",
-      "image/png",
+      "text/plain",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     ]
   }
