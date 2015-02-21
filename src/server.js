@@ -15,6 +15,8 @@
 
     server = express();
 
+    handlebars.registerPartials(__dirname + '/../www/partials/');
+
     server
         .set('views', __dirname + '/../www/views/')
         .set('view engine', 'hbs')

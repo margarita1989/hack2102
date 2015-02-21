@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
 
-    <script src="lib/require.js" data-main="require-config"></script>
+    {{> top_head }}
 </head>
 <body>
    <div
@@ -13,5 +13,6 @@
      url="/upload"
      on-success="onSuccess(response)"
    >Upload</div>
+    <span class="fa fa-icon-close"></span>
 </body>
 </html>
