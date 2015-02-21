@@ -6,6 +6,7 @@
 
         HomeCtrl,
         LoginCtrl,
+        FileUploadCtrl,
         router;
 
     express = require('express');
@@ -13,6 +14,7 @@
 
     HomeCtrl = require('controllers/HomeController');
     LoginCtrl = require('controllers/LoginController');
+    FileUploadCtrl = require('controllers/FileUploadController');
     router = express.Router();
 
     router
@@ -29,6 +31,10 @@
             successRedirect : '/login',
             failureRedirect : '/login'
         }));
+
+    router
+        .route('/upload')
+        .post(FileUploadCtrl);
 
     router
         .route('/login')

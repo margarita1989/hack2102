@@ -25,6 +25,7 @@
                         newUser.google.name = profile._json.name;
                         newUser.google.email = profile._json.email;
                         newUser.google.token = token;
+                        newUser.books = [];
 
                         newUser.save(function(err) {
                             if(err) {
