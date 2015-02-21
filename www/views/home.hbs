@@ -2,12 +2,16 @@
 
 <header>
     <div class="logo">BOOKFACE</div>
-    <div class="login">Login on social network</div>
+    <div class="login"><button>Login on social network</button></div>
 </header>
 <div class="content">
     <div class="menu_column">
         <ul>
             <li>Main</li>
+            <li class="btn btn-primary btn-upload"
+                upload-button
+                url="/upload"
+                on-success="onSuccess(response)">Upload book</li>
             <li>Search</li>
             <li>Profile</li>
         </ul>
