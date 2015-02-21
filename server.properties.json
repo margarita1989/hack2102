@@ -3,12 +3,14 @@
     "development": {
       "port": 3000,
       "baseUrl": "http://localhost:3000",
-      "dbUrl": "mongodb://localhost:27017/bookface"
+      "dbUrl": "mongodb://localhost:27017/bookface",
+      "uploadDir": "www/files"
     },
     "production": {
       "port": 8080,
       "baseUrl": "http://localhost:3000",
-      "dbUrl": "mongodb://localhost:27017/bookface"
+      "dbUrl": "mongodb://localhost:27017/bookface",
+      "uploadDir": "www/files"
     }
   },
   "social": {

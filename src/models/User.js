@@ -14,7 +14,8 @@
             email : String,
             name : String,
             image: String
-        }
+        },
+        books: Array
     });
 
     module.exports = mongoose.model('User', UserSchema);
