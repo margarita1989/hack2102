@@ -10,42 +10,42 @@
             <a href="/auth/google" class="login">SignIn with Google</a>
         {{/ if }}
 </header>
+{{# if isLoggedIn}}
+    <div class="content clearfix">
+        <div class="menu_column left col1">
+            <ul class="main_menu">
+                <li><a href="/">Main</a></li>
+                <li><a href="/profile/">Profile</a></li>
+                <li><a href="/">Search</a></li>
+            </ul>
+                <label class="upload_label">Upload book</label>
+                <div class="btn btn-primary btn-upload"
+                    upload-button
+                    url="/upload"
+                    on-success="onSuccess(response)"></div>
+        </div>
+        <div class="content_column">
+            <div class="plain text"></div>
+            <div class="pagination"></div>
+        </div>
+        <div class="menu_column col3">
+            <div ng-controller="UploadController">
+                <p>{{user.books}}</p>
+                <ul>
+                    {{#each user.books}}
+                        <li>
+                            {{user.books}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
 
-<div class="content clearfix">
-    <div class="menu_column left col1">
-        <ul class="main_menu">
-            <li><a href="/">Main</a></li>
-            <li><a href="/profile/">Profile</a></li>
-            <li><a href="/">Search</a></li>
-        </ul>
-        <label class="upload_label">Upload book</label>
-        <div class="btn btn-primary btn-upload"
-            upload-button
-            url="/upload"
-            on-success="onSuccess(response)"></div>
-    </div>
-    <div class="content_column">
-        <div class="plain text"></div>
-        <div class="pagination"></div>
-    </div>
-    <div class="menu_column col3">
-        <div ng-controller="UploadController">
-            <p style="color: red">{{user}}</p>
-            <p>{{user.books}}</p>
             <ul>
-                {{#each user.books}}
-                    <li>
-                        {{user.books}}
-                    </li>
-                {{/each}}
+                <li>Rating</li>
+                <li>Reviews</li>
+                <li>Comments</li>
             </ul>
         </div>
-
-        <ul>
-            <li>Rating</li>
-            <li>Reviews</li>
-            <li>Comments</li>
-        </ul>
     </div>
-</div>
+{{/ if }}
 {{> bottom }}
