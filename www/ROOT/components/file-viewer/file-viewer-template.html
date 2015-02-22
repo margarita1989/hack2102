@@ -2,10 +2,13 @@
 
     <div class="content_column left clearfix">
         <div class="plain_text">
-            <div class="pagination">
+            <div class="pagination" ng-hide="varPaginator">
                 <button ng-click="prevPage()">&lt;</button>
                 <span>${currentPage} / ${totalPages}</span>
                 <button ng-click="nextPage()">&gt;</button>
+            </div>
+            <div ng-show="varPaginator" class="empty_field">
+                <p>You haven't any books! Please upload.</p>
             </div>
             <br/>
             <pdfviewer src="${pdfUrl}" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
@@ -18,9 +21,12 @@
                 <angular-ratings ng-model="activeBook.rating" notify-url="/book/rating" notify-id="activeBook.customID">
             </li>
             <li><a href="javascript:;" ng-click="toggleReview()">Reviews</a>
-                <div ng-repeat="comment in activeBook.comments" class="comment_elem" ng-show="varReview">
-                    <span><span class="color">author:</span> ${comment.user.name}</span><br/>
-                    <span><span class="color">comment:</span> ${comment.comment}</span>
+                <div ng-show="varReview">
+                    <div ng-repeat="comment in activeBook.comments" class="comment_elem">
+                        <span><span class="color">author:</span> ${comment.user.name}</span><br/>
+                        <span><span class="color">comment:</span> ${comment.comment}</span>
+                    </div>
+                    <div ng-show="activeBook.comments==0">This book has not reviews!</div>
                 </div>
             </li>
             <li><a href="javascript:;" ng-click="toggleComment()">Add comments</a>
@@ -30,7 +36,7 @@
                 </div>
             </li>
         </ul>
-        <p class="upload_label">My books:</p>
+        <p class="upload_label">My books</p>
         <ul class="books_list">
             <li ng-repeat="book in books">
                 <a href="javascript:;" ng-click="changeBook(book)">${book.name}</a>

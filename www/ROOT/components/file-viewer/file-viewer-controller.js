@@ -1,6 +1,7 @@
 define(['angular'], function() {
     return ['$scope', '$http', 'PDFViewerService', function($scope, $http, pdf) {
         $scope.books = bookFace.user.books;
+        $scope.varPaginator = $scope.books.length == 0 ? true: false;
         $scope.activeBook = $scope.books[0] || {url: null};
 
         $scope.pdfUrl = $scope.activeBook.url;
@@ -42,6 +43,7 @@ define(['angular'], function() {
         $scope.sendComment = function() {
             $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.google.name, id: $scope.activeBook.customID})
                 .success(function() {
+                    $scope.comment = '';
                 });
         };
 

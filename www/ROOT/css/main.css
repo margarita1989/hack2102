@@ -8087,7 +8087,7 @@ header .login {
   float: right;
   font-size: 12px;
   background: #fff;
-  padding: 10px 15px;
+  padding: 5px 10px;
   color: #bd3430;
   text-decoration: none;
   margin: 30px 30px 0 0;
@@ -8136,6 +8136,9 @@ header .ava {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
+.content .col3 .main_menu li {
+  padding-bottom: 10px;
+}
 .content .sub_menu {
   border-top: 1px solid #ffe4c4;
   padding-top: 10px;
@@ -8163,6 +8166,8 @@ header .ava {
   padding: 0;
   margin: 0;
   border: none;
+  width: 93px;
+  overflow: hidden;
 }
 .content .books_list li {
   background: url("../images/bok_list.png") left center no-repeat;
@@ -8173,8 +8178,14 @@ header .ava {
   color: #bd3430;
   text-decoration: none;
 }
+.content .empty_field {
+  color: #bd3430;
+  text-align: center;
+  font-size: 16px;
+}
 .content .plain_text {
   padding: 10px;
+  text-align: center;
 }
 .content .pagination {
   margin: 5px 0;
@@ -8193,6 +8204,7 @@ header .ava {
 }
 .content .small_submit {
   float: right;
+  margin-top: 5px;
 }
 .content .comment_elem {
   margin: 7px 0 14px 0;
@@ -8213,19 +8225,26 @@ header .ava {
   right: 13px;
 }
 .content .comment_elem .color {
-  color: #cdb79e;
+  color: #bd3430;
 }
 .content .text {
   text-align: center;
+  padding: 30px 0 0 0;
   font-size: 16px;
   color: #7b2b29;
 }
 .content .list {
+  padding: 30px;
+}
+.content .list li {
   font-size: 16px;
   color: #7b2b29;
-  background: url('../images/iconStarOn.png') 50% 50% no-repeat;
+  background: url('../images/iconStarOn.png') left center no-repeat;
   padding-left: 30px;
   line-height: 30px;
+}
+.unlogined .content_column {
+  margin: 0 auto;
 }
 footer {
   background: #7b2b29;

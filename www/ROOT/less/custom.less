@@ -40,7 +40,7 @@ header {
     float: right;
     font-size: 12px;
     background: #fff;
-    padding: 10px 15px;
+    padding: 5px 10px;
     color: rgb(189,52,48);
     text-decoration: none;
     margin: 30px 30px 0 0;
@@ -90,6 +90,9 @@ header {
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
+  .col3 .main_menu li {
+    padding-bottom: 10px;
+  }
   .sub_menu {
     border-top: 1px solid #ffe4c4;
     padding-top: 10px;
@@ -116,6 +119,8 @@ header {
     padding: 0;
     margin: 0;
     border: none;
+    width: 93px;
+    overflow: hidden;
   }
   .books_list li {
     background: url("../images/bok_list.png") left center no-repeat;
@@ -126,8 +131,15 @@ header {
     color: #bd3430;
     text-decoration: none;
   }
+  .empty_field {
+    color: #bd3430;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 30px;
+  }
   .plain_text {
     padding: 10px;
+    text-align: center;
   }
   .pagination {
     margin: 5px 0;
@@ -146,6 +158,7 @@ header {
   }
   .small_submit {
     float: right;
+    margin-top: 5px;
   }
   .comment_elem {
     margin: 7px 0 14px 0;
@@ -166,21 +179,27 @@ header {
     right: 13px;
   }
   .comment_elem .color {
-    color: #cdb79e;
+    color: #bd3430;
   }
   .text {
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 0 0 0;
     font-size: 16px;
-    color: rgb(123,43,41);
+    color: rgb(123,43,41 );
   }
   .list {
+    padding: 30px;
+  }
+  .list li{
     font-size: 16px;
     color: rgb(123,43,41);
-    background: url('../images/iconStarOn.png') 50% 50% no-repeat;
+    background: url('../images/iconStarOn.png') left center no-repeat;
     padding-left: 30px;
     line-height: 30px;
   }
+}
+.unlogined .content_column {
+  margin: 0 auto;
 }
 footer {
   background: rgb(123,43,41);
