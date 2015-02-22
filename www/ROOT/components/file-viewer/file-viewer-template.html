@@ -13,11 +13,15 @@
     </div>
 
     <div class="menu_column left col3">
-        <angular-ratings ng-model="user_rating" notify-url="/book/rating" notify-id="1">
-        <ul class="main_menu">
-            <li><a href="/">Rating</a></li>
+        <ul class="main_menu clearfix">
+            <li><a href="/">Rating</a>
+                <angular-ratings ng-model="user_rating" notify-url="/book/rating" notify-id="1">
+            </li>
             <li><a href="/">Reviews</a></li>
-            <li><a href="/">Comments</a></li>
+            <li><a href="/">Add comments</a>
+                <textarea placeholder="Write..."></textarea>
+                <button class="small_submit" ng-click="sendComment()">Send</button>
+            </li>
         </ul>
         <p class="upload_label">My books:</p>
         <ul class="books_list">

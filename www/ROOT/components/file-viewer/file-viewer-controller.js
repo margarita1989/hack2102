@@ -33,5 +33,12 @@ define(['angular'], function() {
         $scope.loadProgress = function(loaded, total, state) {
             console.log('loaded =', loaded, 'total =', total, 'state =', state);
         };
+
+        $scope.sendComment = function() {
+            $http.post('/add_comment', {comment: 'hello world', author: bookFace.user.name})
+                .success(function() {
+
+                });
+        }
     }];
 });

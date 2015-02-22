@@ -8184,6 +8184,15 @@ header .ava {
   display: inline-block;
   padding: 0 5px;
 }
+.content textarea {
+  border: none;
+  box-shadow: none;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.content .small_submit {
+  float: right;
+}
 footer {
   background: #7b2b29;
 }
@@ -8195,4 +8204,27 @@ footer p {
   padding: 10px 30px 10px 0;
   text-align: right;
   color: #fff;
+}
+.angular-ratings {
+  overflow: hidden;
+  *zoom: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.angular-ratings li {
+  float: left;
+  width: 20px;
+  height: 20px;
+  border: none margin: 1px;
+  text-indent: -500000em;
+  background: url("../images/icon-star.png") 0 0 no-repeat;
+  background-size: 100%;
+}
+.angular-ratings li.over {
+  background: url('../images/iconStarOn.png') 0 0 no-repeat;
+  cursor: pointer;
+}
+.angular-ratings li.active {
+  background: url('../images/iconStarOn.png') 0 0 no-repeat;
 }
