@@ -8215,6 +8215,18 @@ header .ava {
 .content .comment_elem .color {
   color: #cdb79e;
 }
+.content .text {
+  text-align: center;
+  font-size: 16px;
+  color: #7b2b29;
+}
+.content .list {
+  font-size: 16px;
+  color: #7b2b29;
+  background: url('../images/iconStarOn.png') 50% 50% no-repeat;
+  padding-left: 30px;
+  line-height: 30px;
+}
 footer {
   background: #7b2b29;
 }
@@ -8255,6 +8267,7 @@ footer p {
   border-radius: 10px;
   margin: 3px auto 0 auto;
   width: 1025px;
+  padding: 0 30px;
 }
 .profile_column h2 {
   padding: 30px 0 10px 30px;
@@ -8265,11 +8278,10 @@ footer p {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #bd3430;
-  padding-left: 30px;
 }
 .profile_column .profile_wrapper img {
   width: 100px;
-  margin-right: 15px;
+  margin-right: px;
   float: left;
 }
 .profile_column .profile_wrapper p {
