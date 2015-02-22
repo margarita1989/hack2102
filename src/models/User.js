@@ -9,6 +9,7 @@
 
     UserSchema = new mongoose.Schema({
         google: {
+            id: Number,
             token : String,
             email : String,
             name : String,

@@ -37,7 +37,7 @@ define(['angular'], function() {
         };
 
         $scope.sendComment = function() {
-            $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.name, id: $scope.activeBook.id})
+            $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.google.name, id: $scope.activeBook.customID})
                 .success(function() {
 
                 });
