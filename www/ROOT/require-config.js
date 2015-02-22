@@ -4,6 +4,7 @@ require.config({
         'angular': '../lib/angular',
         'angular-upload': '../lib/angular-upload',
         'angular-pdfViewer': '../lib/ng-pdfviewer',
+        'angular-rating': '../lib/angular-rating',
         'pdf': '../lib/pdf',
         'pdf.worker': '../lib/pdf.worker',
         'pdf.compat': '../lib/pdf.compat',
@@ -18,6 +19,7 @@ require.config({
         'angular-route': ['angular'],
         'angular-translate': ['angular'],
         'angular-upload': ['angular'],
+        'angular-rating': ['angular'],
         'angular-pdfViewer': ['angular', 'pdf']
     },
     deps: ['bookface']

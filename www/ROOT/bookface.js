@@ -2,6 +2,7 @@ define([
     'angular',
     'angular-upload',
     'angular-pdfViewer',
+    'angular-rating',
 
     'upload/upload-controller',
     'file-viewer/file-viewer-controller'
@@ -9,6 +10,7 @@ define([
     angular,
     angularUpload,
     angularPdf,
+    angularRating,
 
     uploadCtrl,
     fileViewerCtrl
@@ -17,7 +19,8 @@ define([
 
     bookFace = angular.module('bookFace', [
         'lr.upload',
-        'ngPDFViewer'
+        'ngPDFViewer',
+        'ratings'
     ]);
 
     PDFJS.workerSrc = '/lib/pdf.worker.js';
