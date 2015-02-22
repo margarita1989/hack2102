@@ -2,18 +2,23 @@
 
 (function() {
     var HomePageCtrl,
+        UserDTO,
         User;
 
+    UserDTO = require('utils/UserDTO');
     User = require('models/User');
 
     HomePageCtrl = function(req, res, next) {
+        var newUserDTO;
+
         if(req.cookies['token']) {
-            User.findOne({'google.token': req.cookies['token']}, function(err, user) {
+            newUserDTO = new UserDTO({'google.token': req.cookies['token']}, function() {
                 res.render('home', {
                     isLoggedIn: true,
-                    user: user
+                    user: newUserDTO
                 });
             });
+
         } else {
             res.render('home', {
                 isLoggedIn: false

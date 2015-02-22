@@ -6,6 +6,7 @@
 
         HomeCtrl,
         LoginCtrl,
+        BookCtrl,
         FileUploadCtrl,
         ProfileCtrl,
         router;
@@ -14,6 +15,7 @@
     passport = require('passport');
 
     HomeCtrl = require('controllers/HomeController');
+    BookCtrl = require('controllers/BookController');
     LoginCtrl = require('controllers/LoginController');
     FileUploadCtrl = require('controllers/FileUploadController');
     ProfileCtrl = require('controllers/ProfileController');
@@ -41,6 +43,10 @@
     router
         .route('/profile/:userID')
         .get(ProfileCtrl);
+
+    router
+        .route('/book/:action')
+        .post(BookCtrl);
 
     router
         .route('/login')

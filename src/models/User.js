@@ -14,8 +14,7 @@
             name : String,
             image: String
         },
-        customID : Number,
-        books: Array
+        customID : Number
     });
 
     module.exports = mongoose.model('User', UserSchema);

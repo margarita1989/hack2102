@@ -6,6 +6,7 @@
 
         properties,
         User,
+        Book,
         FileUploaderCtrl,
 
         options;
@@ -15,12 +16,13 @@
 
     properties = require('server.properties');
     User = require('models/User');
+    Book = require('models/Book');
 
     options = properties['uploader'];
 
     FileUploaderCtrl = function(req, res) {
         var stream,
-            user;
+            book;
 
         if(req.cookies['token'] && req.cookies['logged_by']) {
             req.pipe(req.busboy);
@@ -40,16 +42,22 @@
 
                     stream.on('close', function () {
                         User.findOne({'google.token': req.cookies['token']}, function(err, user) {
-                            user.books.push({
-                                name: filename.split('.')[0],
-                                url: '/books/' + filename.split(' ').join('_').split('.')[0] +
-                                    '_t=' + time_stamp + '.' +
-                                    filename.split('.')[1]
-                            });
-                            user.save(function(err) {
-                                res.json({
-                                    success: true,
-                                    user: user
+                            book = new Book();
+
+                            book.name = filename.split('.')[0];
+                            book.rating = 0;
+                            book.url = '/books/' + filename.split(' ').join('_').split('.')[0] +
+                                '_t=' + time_stamp + '.' +
+                                filename.split('.')[1];
+                            book.owner_id = user.customID;
+
+                            Book.where({}).count(function(err, count) {
+                                book.customID = count + 1;
+                                book.save(function() {
+                                    res.json({
+                                        success: true,
+                                        user: user
+                                    });
                                 });
                             });
                         });
