@@ -13,9 +13,11 @@
                             "url": "{{ this.url }}"
                         },
                     {{/ each }}
-                ]
+                '']
             }
         };
+
+        global.bookFace.user.books.pop();
     })(window);
 </script>
 
