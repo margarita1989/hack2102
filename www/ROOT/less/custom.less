@@ -27,11 +27,15 @@ blockquote, q { quotes:"" ""; }
 /*------------------------------------------------*/
 
 header {
-  min-height: 100px;
-  background: url("../images/fon.png") top center no-repeat;
-  width: 1025px;
-  margin: 0 auto;
+  background: rgb(123,43,41);
 
+  .content_header {
+    background: url("../images/fon.png") top center no-repeat;
+    width: 1025px;
+    margin: 0 auto;
+    box-shadow: inset 0 0px 5px 5px rgb(123,43,41);
+    min-height: 100px;
+  }
   .login {
     float: right;
     font-size: 12px;
@@ -55,6 +59,10 @@ header {
   position: relative;
   min-height: 150px;
 
+  .content_wrapper {
+    margin: 0 auto;
+    width: 1425px;
+  }
   .menu_column {
     width: 200px;
     position: absolute;
@@ -75,10 +83,11 @@ header {
     position: absolute;
   }
   .col1 {
-    padding: 15px 15px 15px 30px;;
+    padding: 15px 15px 15px 30px;
   }
   .col3 {
     right: 0;
+    padding: 15px 15px 15px 30px;
   }
   .main_menu {
     border-bottom: 1px solid #bd3430;
@@ -106,5 +115,8 @@ header {
     padding: 0;
     margin: 0;
     border: none;
+  }
+  .books_list a {
+
   }
 }

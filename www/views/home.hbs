@@ -1,6 +1,7 @@
 {{> top }}
 
 <header>
+    <div class="content_header clearfix">
         {{# if isLoggedIn}}
             <div class="login">
                 {{ user.google.name }}
@@ -9,44 +10,56 @@
         {{ else }}
             <a href="/auth/google" class="login">SignIn with Google</a>
         {{/ if }}
+    </div>
 </header>
 {{# if isLoggedIn}}
-    <div class="content clearfix">
-        <div class="menu_column left col1">
-            <ul class="main_menu">
-                <li><a href="/">Main</a></li>
-                <li><a href="/profile/">Profile</a></li>
-                <li><a href="/">Search</a></li>
-            </ul>
-                <label class="upload_label">Upload book</label>
-                <div class="btn btn-primary btn-upload"
-                    upload-button
-                    url="/upload"
-                    on-success="onSuccess(response)"></div>
-        </div>
-        <div class="content_column">
-            <div class="plain text"></div>
-            <div class="pagination"></div>
-        </div>
-        <div class="menu_column col3">
-            <div ng-controller="UploadController">
-                <p>{{user.books}}</p>
+    <div class="content">
+        <div class="content_wrapper clearfix">
+            <div class="menu_column left col1">
+                <ul class="main_menu">
+                    <li><a href="/">Main</a></li>
+                    <li><a href="/profile/">Profile</a></li>
+                    <li><a href="/">Search</a></li>
+                </ul>
+                    <label class="upload_label">Upload book</label>
+                    <div class="btn btn-primary btn-upload"
+                        upload-button
+                        url="/upload"
+                        on-success="onSuccess(response)"></div>
+            </div>
+            <div class="content_column">
+                <div class="plain text">
+                    <div ng-include="'components/file-viewer/file-viewer-template.html'"></div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <div class="menu_column col3">
+                <p>My books:</p>
+                <div ng-controller="UploadController">
+                    <ul class="books_list">
+                        {{#each user.books}}
+                            <li>
+                                <a href="{{this.url}}">{{this.name}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
                 <ul>
-                    {{#each user.books}}
-                        <li>
-                            {{user.books}}
-                        </li>
-                    {{/each}}
+                    <li>Rating</li>
+                    <li>Reviews</li>
+                    <li>Comments</li>
                 </ul>
             </div>
-            <div ng-include="'components/file-viewer/file-viewer-template.html'"></div>
-            <ul>
-                <li>Rating</li>
-                <li>Reviews</li>
-                <li>Comments</li>
-            </ul>
         </div>
-
+    </div>
+{{ else }}
+    <div class="content clearfix">
+        <p>bla-bla-bla</p>
+        <ul>
+            <li>bla</li>
+            <li>bli</li>
+            <li>blu</li>
+        </ul>
     </div>
 {{/ if }}
 {{> bottom }}
