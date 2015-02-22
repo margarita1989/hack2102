@@ -5,6 +5,9 @@ define(['angular'], function() {
 
         $scope.pdfUrl = $scope.activeBook.url;
 
+        $scope.user_rating = 3;
+        $scope.id = 1;
+
         $scope.instance = pdf.Instance("viewer");
 
         $scope.nextPage = function() {
@@ -29,8 +32,12 @@ define(['angular'], function() {
             $scope.totalPages = totalPages;
         };
 
-        $scope.sendComment = function(id) {
-            $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.google.name, id: id})
+        $scope.loadProgress = function(loaded, total, state) {
+            console.log('loaded =', loaded, 'total =', total, 'state =', state);
+        };
+
+        $scope.sendComment = function() {
+            $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.name, id: $scope.activeBook.id})
                 .success(function() {
 
                 });

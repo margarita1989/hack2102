@@ -8184,11 +8184,12 @@ header .ava {
   display: inline-block;
   padding: 0 5px;
 }
-.content textarea {
+.content textarea#add_comment {
   border: none;
   box-shadow: none;
   padding: 2px;
   margin-bottom: 5px;
+  height: 100px;
 }
 .content .small_submit {
   float: right;
