@@ -31,6 +31,7 @@
     "i18n": "^0.5.0",
     "mongoose": "^3.8.23",
     "passport": "^0.2.1",
-    "passport-google-oauth": "^0.1.5"
+    "passport-google-oauth": "^0.1.5",
+    "rating": "^0.1.0"
   }
 }

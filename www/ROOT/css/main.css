@@ -8111,7 +8111,6 @@ header .ava {
 }
 .content .menu_column {
   width: 200px;
-  position: absolute;
 }
 .content .left {
   float: left;
@@ -8122,11 +8121,8 @@ header .ava {
 .content .content_column {
   background: #FFE4C4;
   border-radius: 10px;
-  height: 100px;
   margin-top: 3px;
-  left: 200px;
-  right: 200px;
-  position: absolute;
+  width: 1025px;
 }
 .content .col1 {
   padding: 15px 15px 15px 30px;
@@ -8136,9 +8132,14 @@ header .ava {
   padding: 15px 15px 15px 30px;
 }
 .content .main_menu {
-  border-bottom: 1px solid #bd3430;
+  border-bottom: 1px solid #ffe4c4;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+.content .sub_menu {
+  border-top: 1px solid #ffe4c4;
+  padding-top: 10px;
+  margin-top: 10px;
 }
 .content .main_menu li a {
   text-decoration: none;
@@ -8147,8 +8148,9 @@ header .ava {
   display: inline-block;
   font-size: 14px;
 }
-.content .main_menu li a:hover {
-  text-decoration: underline;
+.content .main_menu li a:hover,
+.content .books_list a:hover {
+  color: #FFE4C4;
 }
 .content .upload_label {
   font-size: 14px;
@@ -8161,4 +8163,36 @@ header .ava {
   padding: 0;
   margin: 0;
   border: none;
+}
+.content .books_list li {
+  background: url("../images/bok_list.png") left center no-repeat;
+}
+.content .books_list a {
+  display: inline-block;
+  padding: 5px 0 5px 20px;
+  color: #bd3430;
+  text-decoration: none;
+}
+.content .plain_text {
+  padding: 10px;
+}
+.content .pagination {
+  margin: 5px 0;
+}
+.content .pagination span {
+  color: #bd3430;
+  display: inline-block;
+  padding: 0 5px;
+}
+footer {
+  background: #7b2b29;
+}
+footer .footer_wrapper {
+  width: 1025px;
+  margin: 0 auto;
+}
+footer p {
+  padding: 10px 30px 10px 0;
+  text-align: right;
+  color: #fff;
 }

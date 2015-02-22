@@ -14,6 +14,10 @@ define(['angular'], function() {
             $scope.instance.prevPage();
         };
 
+        $scope.changeBook = function(url) {
+            $scope.pdfUrl = url;
+        };
+
         $scope.gotoPage = function(page) {
             $scope.instance.gotoPage(page);
         };
@@ -26,5 +30,18 @@ define(['angular'], function() {
         $scope.loadProgress = function(loaded, total, state) {
             console.log('loaded =', loaded, 'total =', total, 'state =', state);
         };
+
+        var Rating = require('rating');
+
+        var rating = new Rating([1, 2, 3, 4, 5]);
+        document.body.appendChild(rating.el);
+
+        rating.on('rate', function(weight) {
+            console.log('rated: ' + weight);
+        });
+
+        rating.on('current', function(weight) {
+            console.log('current: ' + weight);
+        });
     }];
 });

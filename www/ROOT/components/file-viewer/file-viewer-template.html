@@ -1,8 +1,28 @@
 <div ng-controller="fileViewerController">
-    <button ng-click="prevPage()">&lt;</button>
-    <button ng-click="nextPage()">&gt;</button>
-    <br>
-    <span>${currentPage}/${totalPages}</span>
-    <br>
-    <pdfviewer src="${pdfUrl}" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
+
+    <div class="content_column left clearfix">
+        <div class="plain_text">
+            <div class="pagination">
+                <button ng-click="prevPage()">&lt;</button>
+                <span>${currentPage} / ${totalPages}</span>
+                <button ng-click="nextPage()">&gt;</button>
+            </div>
+            <br/>
+            <pdfviewer src="${pdfUrl}" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
+        </div>
+    </div>
+
+    <div class="menu_column left col3">
+        <ul class="main_menu">
+            <li><a href="/">Rating</a></li>
+            <li><a href="/">Reviews</a></li>
+            <li><a href="/">Comments</a></li>
+        </ul>
+        <p class="upload_label">My books:</p>
+        <ul class="books_list">
+            <li ng-repeat="book in books">
+                <a href="javascript:;" ng-click="changeBook(book.url)">${book.name}</a>
+            </li>
+        </ul>
+    </div>
 </div>

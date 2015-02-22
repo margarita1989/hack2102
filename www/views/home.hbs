@@ -27,29 +27,7 @@
                         url="/upload"
                         on-success="onSuccess(response)"></div>
             </div>
-            <div class="content_column">
-                <div class="plain text">
-                    <div ng-include="'components/file-viewer/file-viewer-template.html'"></div>
-                </div>
-                <div class="pagination"></div>
-            </div>
-            <div class="menu_column col3">
-                <p>My books:</p>
-                <div ng-controller="UploadController">
-                    <ul class="books_list">
-                        {{#each user.books}}
-                            <li>
-                                <a href="{{this.url}}">{{this.name}}</a>
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-                <ul>
-                    <li>Rating</li>
-                    <li>Reviews</li>
-                    <li>Comments</li>
-                </ul>
-            </div>
+            <div ng-include="'components/file-viewer/file-viewer-template.html'"></div>
         </div>
     </div>
 {{ else }}
@@ -62,4 +40,9 @@
         </ul>
     </div>
 {{/ if }}
+<footer>
+    <div class="footer_wrapper">
+        <p class="copyright">2015 &#169; All rights reserved.</p>
+    </div>
+</footer>
 {{> bottom }}
