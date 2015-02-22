@@ -2,8 +2,6 @@ require.config({
     baseUrl: '/components',
     paths: {
         'angular': '../lib/angular',
-        'angular-route': '../lib/angular-route',
-        'angular-translate': '../lib/angular-translate',
         'angular-upload': '../lib/angular-upload',
         'angular-pdfViewer': '../lib/ng-pdfviewer',
         'pdf': '../lib/pdf',

@@ -1,7 +1,5 @@
 define([
     'angular',
-    'angular-route',
-    'angular-translate',
     'angular-upload',
     'angular-pdfViewer',
 
@@ -9,8 +7,6 @@ define([
     'file-viewer/file-viewer-controller'
 ], function(
     angular,
-    angularRoute,
-    angularTranslate,
     angularUpload,
     angularPdf,
 
@@ -20,9 +16,7 @@ define([
     var bookFace;
 
     bookFace = angular.module('bookFace', [
-        'ngRoute',
         'lr.upload',
-        'pascalprecht.translate',
         'ngPDFViewer'
     ]);
 
