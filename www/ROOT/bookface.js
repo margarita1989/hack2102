@@ -26,10 +26,10 @@ define([
         .controller('UploadController', uploadCtrl)
         .controller('fileViewerController', fileViewerCtrl)
 
-        .config(function($interpolateProvider) {
+        .config(['$interpolateProvider', function($interpolateProvider) {
             $interpolateProvider.startSymbol('${');
             $interpolateProvider.endSymbol('}');
-        });
+        }]);
 
     angular.bootstrap(document, ['bookFace']);
 });
