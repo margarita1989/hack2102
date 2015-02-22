@@ -5,7 +5,8 @@ define([
     'angular-rating',
 
     'upload/upload-controller',
-    'file-viewer/file-viewer-controller'
+    'file-viewer/file-viewer-controller',
+    'profile/profile-controller'
 ], function(
     angular,
     angularUpload,
@@ -13,7 +14,8 @@ define([
     angularRating,
 
     uploadCtrl,
-    fileViewerCtrl
+    fileViewerCtrl,
+    profileCtrl
 ) {
     var bookFace;
 
@@ -28,6 +30,7 @@ define([
     bookFace
         .controller('UploadController', uploadCtrl)
         .controller('fileViewerController', fileViewerCtrl)
+        .controller('profileController', profileCtrl)
 
         .config(['$interpolateProvider', function($interpolateProvider) {
             $interpolateProvider.startSymbol('${');

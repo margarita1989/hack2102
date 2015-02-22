@@ -147,6 +147,27 @@ header {
   .small_submit {
     float: right;
   }
+  .comment_elem {
+    margin: 7px 0 14px 0;
+    background: #ffe4c4;
+    border-radius: 7px;
+    padding: 5px;
+    position: relative;
+  }
+  .comment_elem:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 4px 0 4px;
+    border-color: #ffe4c4 transparent transparent transparent;
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: 13px;
+  }
+  .comment_elem .color {
+    color: #cdb79e;
+  }
 }
 footer {
   background: rgb(123,43,41);
@@ -165,3 +186,37 @@ footer {
 .angular-ratings li { float: left; width: 20px; height: 20px; border: none margin: 1px; text-indent: -500000em; background: url("../images/icon-star.png") 0 0 no-repeat; background-size: 100%; }
 .angular-ratings li.over { background: url('../images/iconStarOn.png') 0 0 no-repeat; cursor: pointer; }
 .angular-ratings li.active { background: url('../images/iconStarOn.png') 0 0 no-repeat; }
+
+.profile_column {
+  background: #FFE4C4;
+  border-radius: 10px;
+  margin: 3px auto 0 auto;
+  width: 1025px;
+  padding: 0 30px;
+
+  h2 {
+    padding: 30px 0 10px 30px;
+    font-size: 16px;
+    color: #cdb79e;
+  }
+  .profile_wrapper {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #bd3430;;
+
+
+    img {
+      width: 100px;
+      margin-right: px;
+      float: left;
+    }
+    p {
+      float: left;
+      font-size: 14px;
+      color: #000;
+    }
+    strong {
+      font-weight: bold;
+    }
+  }
+}

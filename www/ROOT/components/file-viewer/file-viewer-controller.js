@@ -10,6 +10,9 @@ define(['angular'], function() {
 
         $scope.instance = pdf.Instance("viewer");
 
+        $scope.varComment = false;
+        $scope.varReview = false;
+
         $scope.nextPage = function() {
             $scope.instance.nextPage();
         };
@@ -39,8 +42,15 @@ define(['angular'], function() {
         $scope.sendComment = function() {
             $http.post('/book/comment', {comment: $scope.comment, author: bookFace.user.google.name, id: $scope.activeBook.customID})
                 .success(function() {
-
                 });
-        }
+        };
+
+        $scope.toggleComment = function() {
+            $scope.varComment = !$scope.varComment;
+        };
+
+        $scope.toggleReview = function() {
+            $scope.varReview = !$scope.varReview;
+        };
     }];
 });

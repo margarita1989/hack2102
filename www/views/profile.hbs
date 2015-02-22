@@ -1,5 +1,31 @@
 {{> top }}
 
-{{ user_profile.google.name }}
+<header>
+<div class="content_header clearfix">
+    <div class="login">
+        {{  user_profile.google.name }}
+        <img class="ava" src="{{ user_profile.google.image}}" alt=""/>
+    </div>
+</div>
+</header>
+<div class="content">
+    <div class="content_wrapper clearfix">
+        <div class="profile_column clearfix" ng-controller="profileController">
+            <h2>Profile:</h2>
+            <div class="profile_wrapper clearfix">
+                <img src="${image}" alt="ava" />
+                <p><strong>${name}</strong><br/>
+                    ${email}</p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<footer>
+    <div   lass="footer_wrapper">
+        <p class="copyright">2015 &#169; All rights reserved.</p>
+    </div>
+</footer>
 
 {{> bottom }}
