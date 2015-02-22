@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'components',
+    baseUrl: '/components',
     paths: {
         'angular': '../lib/angular',
         'angular-route': '../lib/angular-route',
