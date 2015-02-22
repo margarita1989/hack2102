@@ -15,7 +15,11 @@
             newUserDTO = new UserDTO({'google.token': req.cookies['token']}, function() {
                 res.render('home', {
                     isLoggedIn: true,
-                    user: newUserDTO
+                    user: newUserDTO,
+                    bookFaceJSON: JSON.stringify({
+                        user: newUserDTO,
+                        isLoggedIn: true
+                    })
                 });
             });
 

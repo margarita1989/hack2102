@@ -2,37 +2,7 @@
 
 <script>
     (function(global) {
-        global.bookFace = {
-            isLoggedIn: "{{ isLoggedIn }}",
-            user: {
-                name: "{{ user.google.name }}",
-                books: [
-                    {{# each user.books }}
-                        {
-                            "name": "{{ this.name }}",
-                            "url": "{{ this.url }}",
-                            "rating": "{{ this.rating }}",
-                            "id": "{{ this.customID }}",
-                            "comments": [
-                                {{# each this.comments}}
-                                    {
-                                        "comment": "{{ this.comment }}",
-                                        "user": {
-                                            "name": "{{ this.user.name }}",
-                                            "profileURL": "{{ this.user.profileURL }}"
-                                        }
-                                    },
-                                {{/ each }}
-                                {}
-                            ]
-                        },
-                    {{/ each }}
-                    {}
-                ]
-            }
-        };
-
-        global.bookFace.user.books.pop();
+        global.bookFace = {{{ bookFaceJSON }}};
     })(window);
 </script>
 
