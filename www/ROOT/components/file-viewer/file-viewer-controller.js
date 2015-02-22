@@ -1,8 +1,9 @@
 define(['angular'], function() {
     return ['$scope', '$http', 'PDFViewerService', function($scope, $http, pdf) {
         $scope.books = bookFace.user.books;
+        $scope.activeBook = $scope.books[0] || {url: null};
 
-        $scope.pdfUrl = $scope.books[0].url;
+        $scope.pdfUrl = $scope.activeBook.url;
 
         $scope.user_rating = 3;
         $scope.id = 1;
@@ -17,8 +18,9 @@ define(['angular'], function() {
             $scope.instance.prevPage();
         };
 
-        $scope.changeBook = function(url) {
-            $scope.pdfUrl = url;
+        $scope.changeBook = function(book) {
+            $scope.activeBook = book;
+            $scope.pdfUrl = $scope.activeBook.url;
         };
 
         $scope.gotoPage = function(page) {
