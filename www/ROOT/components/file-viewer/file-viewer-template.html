@@ -17,16 +17,17 @@
             <li><a href="/">Rating</a>
                 <angular-ratings ng-model="activeBook.rating" notify-url="/book/rating" notify-id="activeBook.id">
             </li>
-            <li><a href="/">Reviews</a></li>
+            <li><a href="/">Reviews</a>
+                <div>
+                    <li ng-repeat="comment in activeBook.comments">
+                        author: ${comment.user.name}
+                        comment: ${comment.comment}
+                    </li>
+                </div>
+            </li>
             <li><a href="/">Add comments</a>
                 <textarea ng-model="comment" placeholder="Write..."></textarea>
-                <button class="small_submit" ng-click="sendComment(activeBook.id)">Send</button>
-            </li>
-        </ul>
-        <ul>
-            <li ng-repeat="comment in activeBook.comments">
-                author: ${comment.user.name}
-                comment: ${comment.comment}
+                <button class="small_submit" ng-click="sendComment()">Send</button>
             </li>
         </ul>
         <p class="upload_label">My books:</p>
