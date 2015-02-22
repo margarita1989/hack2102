@@ -46,6 +46,7 @@
 
                             book.name = filename.split('.')[0];
                             book.rating = 0;
+                            book.comments = [];
                             book.url = '/books/' + filename.split(' ').join('_').split('.')[0] +
                                 '_t=' + time_stamp + '.' +
                                 filename.split('.')[1];

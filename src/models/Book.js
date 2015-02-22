@@ -12,7 +12,8 @@
         rating: Number,
         name: String,
         url: String,
-        owner_id: Number
+        owner_id: Number,
+        comments: Array
     });
 
     module.exports = mongoose.model('Book', BookSchema);

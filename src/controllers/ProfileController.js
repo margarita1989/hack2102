@@ -22,8 +22,8 @@
         }
 
         if(req.cookies['token']) {
-            newUserDTO = new UserDTO({'google.token': req.cookies['token']}, function(err, user) {
-                getUser(req.params['userID'], user);
+            newUserDTO = new UserDTO({'google.token': req.cookies['token']}, function() {
+                getUser(req.params['userID'], newUserDTO);
             });
         } else {
             getUser(req.params['userID']);

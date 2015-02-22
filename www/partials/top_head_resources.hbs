@@ -12,7 +12,19 @@
                             "name": "{{ this.name }}",
                             "url": "{{ this.url }}",
                             "rating": "{{ this.rating }}",
-                            "id": "{{ this.customID }}"
+                            "id": "{{ this.customID }}",
+                            "comments": [
+                                {{# each this.comments}}
+                                    {
+                                        "comment": "{{ this.comment }}",
+                                        "user": {
+                                            "name": "{{ this.user.name }}",
+                                            "profileURL": "{{ this.user.profileURL }}"
+                                        }
+                                    },
+                                {{/ each }}
+                                {}
+                            ]
                         },
                     {{/ each }}
                     {}

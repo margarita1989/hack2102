@@ -34,8 +34,8 @@ define(['angular'], function() {
             console.log('loaded =', loaded, 'total =', total, 'state =', state);
         };
 
-        $scope.sendComment = function() {
-            $http.post('/book/comment', {comment: 'hello world', author: bookFace.user.name})
+        $scope.sendComment = function(id) {
+            $http.post('/book/comment', {comment: 'hello world', author: bookFace.user.name, id: id})
                 .success(function() {
 
                 });
