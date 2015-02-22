@@ -12,11 +12,16 @@
         var newUserDTO;
 
         function getUser(userID, user) {
-            User.findOne({'customID': userID}, function(err, user_profile) {
+            newUserDTO = new UserDTO({'customID': userID}, function(err, user_profile) {
                 res.render('profile', {
                     isLoggedIn: (user) ? true : false,
                     user: user || null,
-                    user_profile: user_profile
+                    user_profile: newUserDTO,
+                    bookFaceJSON: JSON.stringify({
+                        isLoggedIn: (user) ? true : false,
+                        user: user || null,
+                        user_profile: newUserDTO
+                    })
                 });
             });
         }
