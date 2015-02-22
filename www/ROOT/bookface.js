@@ -20,7 +20,7 @@ define([
         'ngPDFViewer'
     ]);
 
-    PDFJS.workerSrc = 'lib/pdf.worker.js';
+    PDFJS.workerSrc = '/lib/pdf.worker.js';
 
     bookFace
         .controller('UploadController', uploadCtrl)
